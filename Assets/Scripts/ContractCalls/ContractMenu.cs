@@ -12,7 +12,7 @@ public class ContractMenu : MonoBehaviour
     // abi in json format
     string abi = "\" }, { \"inputs\": [], \"name\": \"myTotal\", \"outputs\": [ { \"internalType\": \"uint256\", \"name\": \"\", \"type\": \"uint256\" } ], \"stateMutability\": \"view\", \"type\": \"function\" } ]";
     // address of contract
-    string contract = "0xA422d2D7851Ec6EA2E930ec30d0935f74C54dc66";
+    string contract = "";
     public GameObject SuccessPopup;
     public Text responseText;
 
