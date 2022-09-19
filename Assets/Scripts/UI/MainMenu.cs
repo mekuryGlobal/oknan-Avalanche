@@ -13,13 +13,11 @@ namespace Oknan
         public GameObject pauseMenu;
         public GameObject nFTMenu;
         public GameObject NFTDataMenu;
-        public GameObject VoucherMintNFTMenu;
-        public GameObject VerifyMenu;
         public GameObject SignMenu;
         public GameObject TransferMenu;
         public GameObject ContractMenu;
         public GameObject VoucherMenu;
-        public GameObject MarketplaceMenu;
+        public GameObject BalanceMenu;
         public GameObject WelcomeMenu;
         public GameObject AchievementText;
         public Text CoinsText;
@@ -75,17 +73,7 @@ namespace Oknan
             NFTDataMenu.SetActive(true);
         }
 
-        public void OpenVoucherMintNFTMenu()
-        {
-            FindObjectOfType<AudioManager2>().Play("Pop");
-            VoucherMintNFTMenu.SetActive(true);
-        }
-
-        public void OpenVerifyMenu()
-        {
-            FindObjectOfType<AudioManager2>().Play("Pop");
-            VerifyMenu.SetActive(true);
-        }
+     
 
         public void OpenSignMenu()
         {
@@ -107,10 +95,10 @@ namespace Oknan
             ContractMenu.SetActive(true);
         }
 
-        public void OpenMarketplaceMenu()
+        public void OpenBalanceMenu()
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
-            MarketplaceMenu.SetActive(true);
+            BalanceMenu.SetActive(true);
             Time.timeScale = 0;
         }
         // menu close buttons, usually you would subtract a coin once the blockchain call has suceeded, I've just done it here to show you how in the voucher script
@@ -133,22 +121,7 @@ namespace Oknan
             NFTDataMenu.SetActive(false);
         }
 
-        async public void CloseVoucherMintNFTMenu()
-        {
-            FindObjectOfType<AudioManager2>().Play("Pop");
-            CoinsText.text = "Coins: " + GlobalManager.GetComponent<Global>().globalCoins.ToString();
-            VoucherMintNFTMenu.SetActive(false);
-            AchievementText.SetActive(true);
-            await new WaitForSeconds(5);
-            AchievementText.SetActive(false);
-        }
-
-        public void CloseVerifyMenu()
-        {
-            FindObjectOfType<AudioManager2>().Play("Pop");
-            CoinsText.text = "Coins: " + GlobalManager.GetComponent<Global>().globalCoins.ToString();
-            VerifyMenu.SetActive(false);
-        }
+        
 
         public void CloseSignMenu()
         {
@@ -172,10 +145,10 @@ namespace Oknan
             ContractMenu.SetActive(false);
         }
 
-        public void CloseMarketplaceMenu()
+        public void CloseBalanceMenu()
         {
             FindObjectOfType<AudioManager2>().Play("Pop");
-            MarketplaceMenu.SetActive(false);
+            BalanceMenu.SetActive(false);
             Time.timeScale = 1;
         }
 
